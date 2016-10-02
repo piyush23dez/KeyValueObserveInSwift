@@ -74,9 +74,9 @@ struct Observable<T> {
     
     //Observing class add observer using this method using callback closure
     mutating func addObserver(type: ObservingType, closure: ((T,T) -> ())) {
-        var currentObservers = observersDict[type]
-        currentObservers?.append(closure)
-        observersDict[type] = currentObservers
+        var currentObserversArray = observersDict[type]
+        currentObserversArray?.append(closure)
+        observersDict[type] = currentObserversArray
     }
 }
 
