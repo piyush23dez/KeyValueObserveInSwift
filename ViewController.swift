@@ -54,7 +54,7 @@ struct Observable<T> {
         didSet {
             if let list = observersDict[.DidSet] {
                 for closure in list {
-                    closure(self.value, self.value)
+                    closure(oldValue, self.value)
                 }
             }
         }
